@@ -1,3 +1,31 @@
+{{-- <x-layout>
+    <div class="container mt-5  bg-light mb-3 p-5">
+        <h2>Register</h2>
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" name="name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Confirm Password</label>
+                <input type="password" name="password_confirmation" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-success">Register</button>
+        </form>
+    </div>
+</x-layout> --}}
+
+
+
 <x-layout :title="'Register'">
     <div class="container mt-5 mb-5  ">
         <div class="row justify-content-center">
@@ -27,7 +55,9 @@
                     <div class="tab-pane fade show active" id="hospital" role="tabpanel"
                         aria-labelledby="hospital-tab">
                         {{-- <form method="POST" action="changeit"> --}}
+                        {{-- <form method="POST" action="{{ route('register.hospital') }}"> --}}
                         <form method="POST" action="{{ route('register.hospital') }}">
+
                             @csrf
 
                             <div class="mb-3">
@@ -53,6 +83,12 @@
                                 <input type="text" class="form-control" id="phone_number" name="phone_number"
                                     required>
                             </div>
+
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="address" name="address" required>
+                            </div>
+
 
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
@@ -81,7 +117,9 @@
 
                     <!-- Patient Register Tab -->
                     <div class="tab-pane fade" id="patient" role="tabpanel" aria-labelledby="patient-tab">
-                        <form method="POST" action="changeit">
+                        {{-- <form method="POST" action="changeit"> --}}
+                        <form method="POST" action="{{ route('register.patient') }}">
+
                             {{-- <form method="POST" action="{{ route('register.patient') }}"> --}}
                             @csrf
 
@@ -109,8 +147,17 @@
                                 <input type="password" class="form-control" name="password" id="password" required>
                             </div>
 
-                            <!-- Hidden Role -->
                             <input type="hidden" name="role" value="patient">
+
+                            <!-- Password Confirmation -->
+                            <div class="mb-3">
+                                <label for="password_confirmation" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" name="password_confirmation"
+                                    id="password_confirmation" required>
+                            </div>
+
+
+                            <!-- Hidden Role -->
 
                             <!-- Submit Button -->
                             <button type="submit" class="btn btn-success w-100">Register Patient</button>

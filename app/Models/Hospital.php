@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Hospital extends Model
+class Hospital extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\HospitalFactory> */
     use HasFactory, Notifiable;
@@ -20,7 +20,8 @@ class Hospital extends Model
         'phone_number',
         'email',
         'password',
-        'verified',
+        'address',
+        'status'
     ];
 
     protected $hidden = [

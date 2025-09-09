@@ -10,17 +10,24 @@ return new class extends Migration {
      */
     public function up(): void
     {
+
         Schema::create('hospitals', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('hospital_name');
             $table->string('license_number')->unique();
             $table->string('contact_person');
-            $table->string('phone_number')->nullable();
+            $table->string('phone_number');
             $table->string('email')->unique();
             $table->string('password');
-            $table->boolean('verified')->default(false);
+            $table->string('address')->nullable(); // add directly here
+            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
+            $table->timestamps();
         });
+
+        Schema::table('hospitals', function (Blueprint $table) {
+            $table->rememberToken()->after('password');
+        });
+
     }
 
     /**
@@ -29,5 +36,9 @@ return new class extends Migration {
     public function down(): void
     {
         Schema::dropIfExists('hospitals');
+        Schema::table('hospitals', function (Blueprint $table) {
+            $table->dropColumn('remember_token');
+        });
+
     }
 };
