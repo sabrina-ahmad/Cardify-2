@@ -10,7 +10,7 @@ class HospitalDashboardController extends Controller
 {
     public function index()
     {
-        $hospital = Auth::user(); // if using hospital guard, adjust accordingly
+        $hospital = Auth::user();
         return view('hospital.dashboard', compact('hospital'));
     }
 }

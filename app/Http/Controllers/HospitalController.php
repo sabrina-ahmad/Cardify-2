@@ -40,10 +40,9 @@ class HospitalController extends Controller
             'phone_number' => $request->phone_number,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'verified' => false, // Optional: set to true if you don’t need manual verification
+            'verified' => false,
         ]);
 
-        // return redirect()->route('login')->with('success', 'Hospital registered successfully. Please login.');
         return redirect('/login')->with('success', 'Hospital registered successfully. Please login.');
 
     }

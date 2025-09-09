@@ -20,7 +20,6 @@ class AdminDashboardController extends Controller
         if ($page == 'home') {
             $html = view('admin.pages.home')->render();
         } elseif ($page == 'about') {
-            // $html = view('admin.pages.about')->render();
             $html = view('admin.pages.home')->render();
 
         } else {
@@ -41,7 +40,7 @@ class AdminDashboardController extends Controller
     public function reject($id)
     {
         $hospital = Hospital::findOrFail($id);
-        $hospital->delete(); // or soft delete if enabled
+        $hospital->delete();
         return redirect()->route('admin.dashboard')->with('success', 'Hospital rejected and removed.');
     }
 }

@@ -18,7 +18,6 @@ class LoginController extends Controller
             'password' => ['required'],
         ]);
 
-        // ✅ 1. Try to login from users table
         $user = User::where('email', $request->email)->first();
         if ($user && Hash::check($request->password, $user->password)) {
             Auth::login($user, $request->filled('remember'));
@@ -26,15 +25,14 @@ class LoginController extends Controller
             if ($user->role === 'admin') {
                 return redirect()->route('admin.dashboard');
             } elseif ($user->role === 'doctor') {
-                return redirect()->route('dashboard'); // doctor dashboard
+                return redirect()->route('dashboard');
             } elseif ($user->role === 'patient') {
-                return redirect()->route('dashboard'); // patient dashboard
+                return redirect()->route('dashboard');
             }
 
-            return redirect()->route('dashboard'); // fallback
+            return redirect()->route('dashboard');
         }
 
-        // ✅ 2. Try to login from hospitals table
         $hospital = Hospital::where('email', $request->email)->first();
         if ($hospital && Hash::check($request->password, $hospital->password)) {
             if ($hospital->status !== 'approved') {
@@ -43,17 +41,11 @@ class LoginController extends Controller
                 ]);
             }
 
-
-            // You may want a separate guard for hospitals
-            // Auth::guard('hospital')->login($hospital, $request->filled('remember'));
             Auth::login($hospital, $request->filled('remember'));
             return redirect()->route('hospital.dashboard');
 
-            // return redirect()->route('hospital.dashboard');
         }
 
-
-        // ❌ Invalid credentials
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
@@ -61,7 +53,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('auth.login'); // 👈 make sure resources/views/auth/login.blade.php exists
+        return view('auth.login');
     }
     public function logout(Request $request)
     {

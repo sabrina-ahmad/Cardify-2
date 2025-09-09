@@ -22,14 +22,9 @@
                         <a class="nav-link {{ request()->is('about') ? 'active fw-bold' : '' }}" href="/about">About
                             Us</a>
 
-                        {{-- <a class="nav-link active" href="/">Home</a>
-                        <a class="nav-link" href="/service">Service</a>
-                        <a class="nav-link" href="/contact">Contact Us</a>
-                        <a class="nav-link" href="/about">About Us</a> --}}
+
                     </div>
                     <div class="navbar-nav gap-1 mt-2 mt-sm-0">
-                        {{-- <a href="/register" class="btn btn-success">Register</a>
-                        <a href="/login" class="btn btn-primary">Login</a> --}}
                         @guest
                             <a href="{{ route('register') }}" class="btn btn-success">Register</a>
                             <a href="{{ route('login') }}" class="btn btn-primary">Login</a>

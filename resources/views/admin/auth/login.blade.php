@@ -1,7 +1,4 @@
-{{-- @extends('layouts.app') --}}
-{{-- @extends('components.layout') --}}
-{{-- Or use your actual layout --}}
-<x-layout>
+<x-admin>
     <div class="container mt-5" style="max-width: 400px;">
         <h3 class="mb-4 text-center">Admin Login</h3>
 
@@ -28,4 +25,4 @@
             <button type="submit" class="btn btn-primary w-100">Login</button>
         </form>
     </div>
-</x-layout>
+</x-admin>

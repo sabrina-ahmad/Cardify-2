@@ -11,7 +11,7 @@ class PatientRegisterController extends Controller
 {
     public function store(Request $request)
     {
-        // ✅ Validate input
+        // Validate input
         $request->validate([
             'fullname' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users,username',
@@ -19,7 +19,7 @@ class PatientRegisterController extends Controller
             'password' => 'required|string|min:8|confirmed',
         ]);
 
-        // ✅ Create user
+        // Create user
         $user = User::create([
             'fullname' => $request->fullname,
             'username' => $request->username,
@@ -28,7 +28,7 @@ class PatientRegisterController extends Controller
             'role' => 'patient',
         ]);
 
-        // ✅ Login after registration (optional)
+        // Login after registration (optional)
         // auth()->login($user);
         auth()->guard()->login($user);
 

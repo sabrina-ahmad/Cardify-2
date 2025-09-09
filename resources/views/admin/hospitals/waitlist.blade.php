@@ -16,6 +16,7 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Address</th>
+                <th>License Number</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -25,6 +26,7 @@
                     <td>{{ $hospital->hospital_name }}</td>
                     <td>{{ $hospital->email }}</td>
                     <td>{{ $hospital->address }}</td>
+                    <td>{{ $hospital->license_number }}</td>
                     <td>
                         <form method="POST" action="{{ route('admin.hospitals.approve', $hospital->id) }}"
                             style="display:inline;">
