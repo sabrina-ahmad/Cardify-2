@@ -9,12 +9,14 @@
 
     {{-- <!-- Styles / Scripts -->
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot'))) --}}
-    @vite(['resources/scss/app.scss', 'resources/js/app.js'])
+    {{-- @vite(['resources/scss/app.scss', 'resources/js/app.js']) --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
 </head>
 
-<body class="bg-light-blue">
+<!-- <body class="bg-light-blue"> -->
+    <body>
     <div class="container-fluid background-layout">
         <div class="row h-100">
             <div class="col-8 bg-left"></div>
@@ -24,12 +26,13 @@
 
     <x-header></x-header>
 
-    <main class="d-flex flex-column z-2 position-relative">
-        <section class="mt-5 vh-70 mb-5">
+    <main class="d-flex flex-column z-2 position-relative mt-5">
+        <section class="mt-3 vh-70 mb-5 bg-light-blue">
             <div class="container mt-5 row align-items-center">
-                <div class="col-lg-5 mx-auto">
-                    <h1 class="display-4 fw-bold text-body-emphasis">Cardify Health</h1>
-                    <p class="lead mt-5">
+                <div class="col-lg-6 mx-auto">
+                    <h1 class="display-4 fw-bold text-primary">Cardify Health</h1>
+                    <h2 class="display-4 fw-bold text-body-emphasis">Connect. Care. Cure</h2>
+                    <p class="lead mt-2 fw-normal text-secondary">
                         Welcome to Cardify Health — where you can find the right doctor and book appointments instantly.
                         Whether you need a general checkup, a specialist consultation, or urgent care, Cardify helps
                         you find the right doctor closest to you.
@@ -44,13 +47,13 @@
                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="3000">
-                                <img src="./assets/images/2149844651.jpg" class="d-block w-100" alt="...">
+                                <img src="{{ asset('images/hero-medical-1.jpg') }}" class="d-block w-100 rounded" alt="...">
                             </div>
                             <div class="carousel-item" data-bs-interval="3000">
-                                <img src="./assets/images/image copy.png" class="d-block w-100" alt="...">
+                                <img src="{{ asset('images/hero-medical-2.jpg') }}" class="d-block w-100 rounded" alt="...">
                             </div>
                             <div class="carousel-item" data-bs-interval="3000">
-                                <img src="./assets/images/image.png" class="d-block w-100" alt="...">
+                                <img src="{{ asset('images/hero-medical-3.webp') }}" class="d-block w-100 rounded" alt="...">
                             </div>
                         </div>
                     </div>
