@@ -18,3 +18,13 @@
 .bg-light-blue {
     background-color: lightblue;
 }
+
+.glassy {
+    background: rgba(255, 255, 255, 0.08);
+    /* transparent */
+    backdrop-filter: blur(12px);
+    /* blur effect */
+    -webkit-backdrop-filter: blur(52px);
+    /* Safari */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}

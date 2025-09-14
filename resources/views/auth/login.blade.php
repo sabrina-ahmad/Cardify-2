@@ -1,29 +1,27 @@
 <x-layout>
 
-    <div class="container-fluid min-vh-100 d-flex bg-light-blue">
+    <div class="container-fluid min-vh-100 d-flex">
         <div class="row w-100">
 
             <!-- LEFT: Hero Section -->
-            <div
-                class="col-lg-6 d-none d-lg-flex flex-column justify-content-center align-items-center text-white bg-primary p-5">
-                <div class="text-center">
+            <div class="col-lg-6 col-sm-12 d-lg-flex flex-column justify-content-center text-white bg-primary p-5">
+                <div class="text-center w-100">
                     <h1 class="display-5 fw-bold">Welcome to Cardify Health</h1>
                     <p class="lead mt-3">
                         Find the right doctor, book appointments instantly, and manage your health better — all in one
                         place.
                     </p>
-                    <img src="{{ asset('assets/images/healthcare-illustration.svg') }}" alt="Healthcare Illustration"
-                        class="img-fluid mt-4" style="max-height: 300px;">
+                    {{-- <img src="{{ asset('assets/images/healthcare-illustration.svg') }}" alt="Healthcare Illustration" --}}
+                    {{-- class="img-fluid mt-4" style="max-height: 300px;"> --}}
                 </div>
             </div>
 
             <!-- RIGHT: Login Form -->
-            <div class="col-lg-6 d-flex align-items-center justify-content-center bg-white p-5">
+            <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center bg-white p-5">
                 <div class="w-100" style="max-width: 400px;">
 
                     <h3 class="mb-4 text-center">Login to Cardify</h3>
 
-                    {{-- 🔹 Change action based on which login you’re using --}}
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
