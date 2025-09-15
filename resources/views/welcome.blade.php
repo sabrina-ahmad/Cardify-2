@@ -66,9 +66,9 @@
                 Everything you need to manage healthcare operations efficiently and securely
             </p>
 
-            <div class="row gap-2 justify-content-center">
+            <div class="row gap-2 justify-content-center mx-sm-5">
                 {{-- <div class=""> --}}
-                <div class="card col-lg-3 col-sm-12  border-info shadow">
+                <div class="card col-lg-3 col-md-5 col-sm-10  border-info shadow">
                     <div class="card-body my-3">
                         <span class=" text-light btn-gradient-primary py-3 px-3 text-start rounded-3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -85,7 +85,7 @@
 
                     </div>
                 </div>
-                <div class="card col-lg-3 col-sm-12 border-info shadow">
+                <div class="card col-lg-3 col-md-5 col-sm-12 border-info shadow">
                     <div class="card-body my-3">
                         <span class=" text-light btn-gradient-primary py-3 px-3 text-start rounded-3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -102,7 +102,7 @@
 
                     </div>
                 </div>
-                <div class="card col-lg-3 col-sm-12  border-info shadow">
+                <div class="card col-lg-3 col-md-5 col-sm-12  border-info shadow">
                     <div class="card-body my-3">
                         <span class=" text-light btn-gradient-primary py-3 px-3 text-start rounded-3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -125,7 +125,7 @@
                     </div>
                 </div>
 
-                <div class="card col-lg-3 col-sm-12  border-info shadow">
+                <div class="card col-lg-3 col-md-5 col-sm-12  border-info shadow">
                     <div class="card-body my-3">
                         <span class=" text-light btn-gradient-primary py-3 px-3 text-start rounded-3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -142,7 +142,7 @@
                     </div>
                 </div>
 
-                <div class="card col-lg-3 col-sm-12  border-info shadow">
+                <div class="card col-lg-3 col-md-5 col-sm-12  border-info shadow">
                     <div class="card-body my-3">
                         <span class=" text-light btn-gradient-primary py-3 px-3 text-start rounded-3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
@@ -160,7 +160,7 @@
                     </div>
                 </div>
 
-                <div class="card col-lg-3 col-sm-12  border-info shadow">
+                <div class="card col-lg-3 col-md-5 col-sm-12  border-info shadow">
                     <div class="card-body my-3">
                         <span class=" text-light btn-gradient-primary py-3 px-3 text-start rounded-3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"

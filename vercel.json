@@ -3,14 +3,14 @@
     "framework": null,
     "builds": [
         {
-            "src": "/api/**/*.php",
+            "src": "/api/index.php",
             "use": "vercel-php@0.7.4"
         }
     ],
     "routes": [
         {
-            "src": "/(favicon.ico|robots.txt|images/.*|css/.*|js/.*)",
-            "dest": "/public/$1"
+            "src": "/(images|css|js|favicon.ico|robots.txt)/(.*))",
+            "dest": "/public/$1/$2"
         },
         {
             "src": "/build/(.*)",
